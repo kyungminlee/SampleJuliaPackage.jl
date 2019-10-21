@@ -1,0 +1,13 @@
+name = "SampleJuliaPackage"
+uuid = "44428187-c90f-48b4-86b8-0899d0126f89"
+authors = ["Kyungmin Lee"]
+version = "0.1.0"
+
+[compat]
+julia = "1"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
