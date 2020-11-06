@@ -1,0 +1,22 @@
+name: test
+on: [push, pull_request]
+jobs:
+  Test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: action/checkout@v2
+    - uses: julia-actions/setup-julia@v1
+      with:
+      version: "1.5"
+    - name: checkout coverage
+      run: |
+        julia -e 'import Pkg; Pkg.update()'
+        julia -e 'import Pkg; Pkg.add(url="https://github.com/JuliaLang/Example.jl", rev="feature/github-action")'
+    - name: build
+      run: julia --project -e 'import Pkg; Pkg.build()'
+    - name: test
+      run: julia --project --check-bounds=yes 'import Pkg; Pkg.test(;coverage=true, julia_args=`--inline=no`)'
+    - name: codecov upload
+      run: julia -e 'import Pkg; Pkg.add("Coverage"); using Coverage; Codecov.submit(process_folder())'
+      env:
+        CODECOV_TOKEN=${{ secrets.CODECOV_TOKEN }}
