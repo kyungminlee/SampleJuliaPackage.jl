@@ -4,6 +4,8 @@ jobs:
   Test:
     runs-on: ubuntu-latest
     steps:
+    - name: show variables
+      run: set
     - uses: actions/checkout@v2
     - uses: julia-actions/setup-julia@v1
       with:
