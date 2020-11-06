@@ -1,6 +1,6 @@
 # SampleJuliaPackage
 
-Testing..
+Testing...
 
 [![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://kyungminlee.github.io/SampleJuliaPackage.jl/stable)
 [![Dev](https://img.shields.io/badge/docs-dev-blue.svg)](https://kyungminlee.github.io/SampleJuliaPackage.jl/dev)
