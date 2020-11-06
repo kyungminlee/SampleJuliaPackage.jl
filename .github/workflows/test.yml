@@ -7,7 +7,7 @@ jobs:
     - uses: action/checkout@v2
     - uses: julia-actions/setup-julia@v1
       with:
-      version: "1.5"
+        version: "1.5"
     - name: checkout coverage
       run: |
         julia -e 'import Pkg; Pkg.update()'
