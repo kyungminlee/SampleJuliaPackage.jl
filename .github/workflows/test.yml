@@ -19,6 +19,6 @@ jobs:
     - name: test
       run: julia --project --check-bounds=yes -e 'import Pkg; Pkg.test(;coverage=true, julia_args=`--inline=no`)'
     - name: codecov upload
-      run: julia -e 'import Pkg; Pkg.add("Coverage"); using Coverage; Codecov.submit(process_folder())'
+      run: julia -e 'using Coverage; Codecov.submit(process_folder())'
       env:
         CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
