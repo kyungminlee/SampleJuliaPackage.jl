@@ -11,7 +11,7 @@ jobs:
     - name: checkout coverage
       run: |
         julia -e 'import Pkg; Pkg.update()'
-        julia -e 'import Pkg; Pkg.add(url="https://github.com/JuliaLang/Example.jl", rev="feature/github-action")'
+        julia -e 'import Pkg; Pkg.add(url="https://github.com/kyungminlee/Coverage.jl", rev="feature/github-action")'
     - name: build
       run: julia --project -e 'import Pkg; Pkg.build()'
     - name: test
